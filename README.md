@@ -3,10 +3,19 @@
 _playing with Unit Tests and refactoring, 
 any feedback welcome_
 
+## Usage ##
+
+	$RC = new RomanCalculator();
+	print $RC->add('II', 'II'); // prints "IV"
+	print $RC->sub('III','I'); // prints "II"
+	print $RC->times('IV', 'IV'); // prints "XVI"
+	print $RC->by('X','V'); // prints "II"
+
+
 ## Primitives ##
 
 Pos|Num|Val|Max in a row| Subtract if precedes|
----|---|---|----|-|
+---|---|---|----|--|
 0| **I** |  1  | 3  | V _or_ X |
 1| **V** |  5  | 1  | |
 2| **X** | 10  | 3  | L _or_ C |
