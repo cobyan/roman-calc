@@ -3,6 +3,8 @@
 _playing with Unit Tests and refactoring, 
 any feedback welcome_
 
+![Code Climate Score](https://codeclimate.com/github/cobyan/roman-calc/badges/gpa.svg)
+
 ## Usage ##
 
 	$RC = new RomanCalculator();
