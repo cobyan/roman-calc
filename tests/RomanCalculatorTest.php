@@ -116,7 +116,7 @@ class RomanCalculatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testBy($rom1, $rom2, $expected)
     {
-        $times_rom = $this->Calculator->by($rom1,$rom2);
+        $times_rom = $this->Calculator->divideBy($rom1,$rom2);
         $this->assertEquals($expected,$this->Calculator->getConverter()->toInt($times_rom));
     }
 

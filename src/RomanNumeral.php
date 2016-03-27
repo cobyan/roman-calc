@@ -41,8 +41,7 @@ class RomanNumeral
      */
     public function validate($numeral)
     {
-        $pm = preg_match('/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', $numeral, $matches);
-        return boolval($pm);
+        return boolval(preg_match('/^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/', $numeral));
     }
 
     public function getPrimitives()

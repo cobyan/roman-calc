@@ -12,13 +12,13 @@ namespace Cobyan;
 class RomanCalculator
 {
     /**
-     * @var RomanNumeralConverter
+     * @var $converter RomanNumeralConverter
      */
-    protected $Converter;
+    protected $converter;
 
-    public function __construct($Converter)
+    public function __construct($converter)
     {
-        $this->setConverter($Converter);
+        $this->setConverter($converter);
     }
 
     /**
@@ -26,35 +26,35 @@ class RomanCalculator
      */
     public function getConverter()
     {
-        return $this->Converter;
+        return $this->converter;
     }
 
-    public function setConverter($Converter)
+    public function setConverter($converter)
     {
-        $this->Converter = $Converter;
+        $this->converter = $converter;
     }
 
     /**
-     * @param $op
-     * @param $RN1 RomanNumeral
-     * @param $RN2 RomanNumeral
+     * @param $operation_symbol
+     * @param $rn1 RomanNumeral
+     * @param $rn2 RomanNumeral
      * @return string
      * @throws \Exception
      */
-    public function doOp($op, $RN1, $RN2)
+    public function doOp($operation_symbol, $rn1, $rn2)
     {
-        $Converter = $this->Converter;
-        if(empty($RN1) || empty($RN2)) return '';
+        $Converter = $this->converter;
+        if(empty($rn1) || empty($rn2)) return '';
 
-        $op1 = $Converter->toInt($RN1);
-        $op2 = $Converter->toInt($RN2);
+        $op1 = $Converter->toInt($rn1);
+        $op2 = $Converter->toInt($rn2);
 
         $result = 0;
 
 // if 'eval' wasn't "very dangerous".. (http://php.net/manual/en/function.eval.php)
 // $result = eval("$op=".$Converter->toInt($RN1) . "$op". $Converter->toInt($RN2));
 
-        switch($op) {
+        switch($operation_symbol) {
             case '+':
                 $result = $op1 + $op2;
                 break;
@@ -70,7 +70,7 @@ class RomanCalculator
                 }
                 break;
             default:
-                throw new \Exception("Operation not supported: '$op'");
+                throw new \Exception("Operation not supported: '$operation_symbol'");
         }
 
         $rom_result = '';
@@ -111,7 +111,7 @@ class RomanCalculator
             new RomanNumeral($rom2));
     }
 
-    function by($rom1, $rom2)
+    function divideBy($rom1, $rom2)
     {
         return $this->doOp('/',
             new RomanNumeral($rom1),

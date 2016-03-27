@@ -24,10 +24,10 @@ class RomanNumeralConverter
     private function rommap($num, $position)
     {
 
-        $r = ['I','V', 'X', 'L', 'C', 'D', 'M'];
+        $roman_primitives = ['I','V', 'X', 'L', 'C', 'D', 'M'];
         //     0   1    2    3    4    5    6
 
-        $r_tuple = array_slice($r, $position*2, 3);
+        $r_tuple = array_slice($roman_primitives, $position*2, 3);
 
         $out = "";
         switch($num) {
@@ -69,27 +69,27 @@ class RomanNumeralConverter
         return $this->int2rom($int);
     }
 
-    public function toInt($rn)
+    public function toInt($roman_numeral)
     {
-        if(empty($rn)) return null;
-        if($rn instanceof RomanNumeral) {
-            $rn = (string) $rn;
+        if(empty($roman_numeral)) return null;
+        if($roman_numeral instanceof RomanNumeral) {
+            $roman_numeral = (string) $roman_numeral;
         }
-        return $this->rom2int($rn);
+        return $this->rom2int($roman_numeral);
     }
 
     function int2rom($int)
     {
         // Due to the limitions of the roman number system you can only convert numbers from 1 to 3999.
-        if($int <= 0 || $int>4999) return '';
+        if($int <= 0 || $int>3999) return '';
 
         $int_string = "$int";
-        $l = strlen($int_string); // 1
+        $int_string_length = strlen($int_string);
 
         $rom = "";
 
-        for($i=$l-1;$i>=0;$i--) {
-            $rom = $this->rommap($int_string[$i], $l-1 -$i) . $rom;
+        for($i=$int_string_length-1;$i>=0;$i--) {
+            $rom = $this->rommap($int_string[$i], $int_string_length-1 -$i) . $rom;
         }
 
         return $rom;
@@ -101,16 +101,16 @@ class RomanNumeralConverter
      */
     function rom2int($rom)
     {
-        $RN = new RomanNumeral($rom);
+        $romanNumeral = new RomanNumeral($rom);
 
         $rom2int = 0;
-        $primitives = array_keys($RN->getPrimitives());
-        $numeral_length = $RN->getLength();
+        $primitives = array_keys($romanNumeral->getPrimitives());
+        $numeral_length = $romanNumeral->getLength();
 
         for($i=0;$i<$numeral_length;$i++) {
 
             $_rom = $rom[$i];
-            $_int = $RN->getPrimitiveValue($_rom);
+            $_int = $romanNumeral->getPrimitiveValue($_rom);
             $s_start = array_search($_rom, $primitives);
 
             $family = [];
