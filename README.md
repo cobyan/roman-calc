@@ -3,7 +3,7 @@
 _playing with Unit Tests and refactoring, 
 any feedback welcome_
 
-![Code Climate Score](https://codeclimate.com/github/cobyan/roman-calc/badges/gpa.svg)
+[![Code Climate](https://codeclimate.com/github/cobyan/roman-calc/badges/gpa.svg)](https://codeclimate.com/github/cobyan/roman-calc)
 
 ## Usage ##
 
