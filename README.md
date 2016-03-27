@@ -6,7 +6,7 @@ any feedback welcome_
 ## Primitives ##
 
 Pos|Num|Val|Max in a row| Subtract if precedes|
----|---|---|----|-|
+---|---|---|------------|---------------------|
 0| **I** |  1  | 3  | V _or_ X |
 1| **V** |  5  | 1  | |
 2| **X** | 10  | 3  | L _or_ C |
@@ -18,7 +18,7 @@ Pos|Num|Val|Max in a row| Subtract if precedes|
 ## Series ##
 
 group|values|pivots|
--|-|-|
+-----|------|------|
 units|I, 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX' | I,V,X |
 tens |'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC' | X,L,C |
 hundreds|'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM' | C,D,M |
