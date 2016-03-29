@@ -1,3 +1,9 @@
+# Test
+
+```bash
+php vendor/bin/phpunit tests/
+```
+
 # Roman Calculator #
 
 _playing with Unit Tests and refactoring, 
