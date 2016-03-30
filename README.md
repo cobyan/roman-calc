@@ -1,7 +1,16 @@
+# Setup 
+Download & install Composer following the [official instructions](https://getcomposer.org/download)
+
+ 
 # Test
 
 ```bash
 php vendor/bin/phpunit tests/
+``` 
+or just
+
+```bash
+phpunit
 ```
 
 # Roman Calculator #
