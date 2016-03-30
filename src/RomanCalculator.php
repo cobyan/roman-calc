@@ -35,13 +35,13 @@ class RomanCalculator
     }
 
     /**
-     * @param $operation_symbol
+     * @param $operationSymbol
      * @param $rn1 RomanNumeral
      * @param $rn2 RomanNumeral
      * @return string
      * @throws \Exception
      */
-    public function doOp($operation_symbol, $rn1, $rn2)
+    public function doOp($operationSymbol, $rn1, $rn2)
     {
         $Converter = $this->converter;
         if(empty($rn1) || empty($rn2)) return '';
@@ -54,7 +54,7 @@ class RomanCalculator
 // if 'eval' wasn't "very dangerous".. (http://php.net/manual/en/function.eval.php)
 // $result = eval("$op=".$Converter->toInt($RN1) . "$op". $Converter->toInt($RN2));
 
-        switch($operation_symbol) {
+        switch($operationSymbol) {
             case '+':
                 $result = $op1 + $op2;
                 break;
@@ -70,7 +70,7 @@ class RomanCalculator
                 }
                 break;
             default:
-                throw new \Exception("Operation not supported: '$operation_symbol'");
+                throw new \Exception("Operation not supported: '$operationSymbol'");
         }
 
         $rom_result = '';

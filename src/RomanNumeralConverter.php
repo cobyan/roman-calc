@@ -69,13 +69,13 @@ class RomanNumeralConverter
         return $this->int2rom($int);
     }
 
-    public function toInt($roman_numeral)
+    public function toInt($romanNumeral)
     {
-        if(empty($roman_numeral)) return null;
-        if($roman_numeral instanceof RomanNumeral) {
-            $roman_numeral = (string) $roman_numeral;
+        if(empty($romanNumeral)) return null;
+        if($romanNumeral instanceof RomanNumeral) {
+            $romanNumeral = (string) $romanNumeral;
         }
-        return $this->rom2int($roman_numeral);
+        return $this->rom2int($romanNumeral);
     }
 
     function int2rom($int)
