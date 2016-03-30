@@ -1,3 +1,13 @@
+# Roman Calculator #
+
+This is a very simple calculator doing binary operations on roman numerals. You can add, subtract, multiply and divide in the ancient numeral system 
+
+_playing with Unit Tests and refactoring, any feedback welcome_
+
+[![Code Climate](https://codeclimate.com/github/cobyan/roman-calc/badges/gpa.svg)](https://codeclimate.com/github/cobyan/roman-calc)
+[![Code coverage](https://codeclimate.com/github/cobyan/roman-calc/badges/coverage.svg)](https://codeclimate.com/github/cobyan/roman-calc)
+
+
 # Setup 
 Download & install Composer following the [official instructions](https://getcomposer.org/download)
 
@@ -13,12 +23,6 @@ or just
 phpunit
 ```
 
-# Roman Calculator #
-
-_playing with Unit Tests and refactoring, 
-any feedback welcome_
-
-[![Code Climate](https://codeclimate.com/github/cobyan/roman-calc/badges/gpa.svg)](https://codeclimate.com/github/cobyan/roman-calc)
 
 ## Usage ##
 
